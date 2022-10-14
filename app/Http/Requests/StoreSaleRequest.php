@@ -27,6 +27,7 @@ class StoreSaleRequest extends FormRequest
             'show_id'=>'required|exists:shows,id',
             'user_id'=>'required|exists:users,id',
             'consumer_id'=>'required|exists:users,id',
+            'currency_id'=>'required|exists:currencies,id'
         ];
     }
 }

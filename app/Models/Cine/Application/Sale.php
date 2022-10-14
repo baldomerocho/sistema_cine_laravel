@@ -14,7 +14,8 @@ class Sale extends Model
     protected $fillable = [
         'show_id',
         'user_id',
-        'consumer_id'
+        'consumer_id',
+        'currency_id'
     ];
 
     protected $hidden = [

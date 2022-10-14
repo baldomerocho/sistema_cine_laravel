@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('room_id');
             $table->foreign('room_id')->references('id')->on('rooms')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignUuid('movie_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->decimal('price',6,2);
             $table->softDeletes();
             $table->timestamps();
         });
