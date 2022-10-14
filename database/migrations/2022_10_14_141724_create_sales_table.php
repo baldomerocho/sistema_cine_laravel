@@ -25,6 +25,9 @@ return new class extends Migration
             $table->unsignedBigInteger('consumer_id')->nullable();
             $table->foreign('consumer_id')->references('id')->on('users')->cascadeOnUpdate()->cascadeOnDelete();
 
+            $table->unsignedBigInteger('currency_id')->nullable();
+            $table->foreign('currency_id')->references('id')->on('currencies')->cascadeOnUpdate()->cascadeOnDelete();
+
             $table->softDeletes();
             $table->timestamps();
         });
