@@ -24,7 +24,11 @@ class StoreShowRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'start'=>'datetime|required',
+            'end'=>'datetime|required',
+            'movie_id'=>'required|exists:movies,id|uuid',
+            'room_id'=>'required|exists:rooms,id',
+            'price'=>'required|between:0,999.99'
         ];
     }
 }
