@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignUuid('sale_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
 
             $table->unsignedBigInteger('seat_id');
-            $table->foreign('seat_id')->references('id')->on('seat')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('seat_id')->references('id')->on('seats')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

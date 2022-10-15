@@ -27,4 +27,14 @@ class Room extends Model
     {
         return $this->belongsTo(City::class);
     }
+
+    public function seats()
+    {
+        return $this->hasMany(Seat::class);
+    }
+
+    public function shows()
+    {
+        return $this->hasMany(Show::class);
+    }
 }
