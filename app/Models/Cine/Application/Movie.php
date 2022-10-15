@@ -2,6 +2,7 @@
 
 namespace App\Models\Cine\Application;
 
+use App\Traits\UUID;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -10,6 +11,7 @@ class Movie extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    use UUID;
 
     protected $fillable = [
         'title',
@@ -22,7 +24,8 @@ class Movie extends Model
         'backdrop_path',
         'imdb_id',
         'tmdb_id',
-        'adult'
+        'adult',
+        'overview',
     ];
 
     public function genders()

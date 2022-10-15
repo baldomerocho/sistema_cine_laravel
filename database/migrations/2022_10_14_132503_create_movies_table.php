@@ -22,10 +22,11 @@ return new class extends Migration
             $table->string('status',50)->nullable();
             $table->string('language',10)->nullable();
             $table->string('poster_path',100);
-            $table->string('backdrop_path',100);
-            $table->integer('imdb_id')->unique();
-            $table->integer('tmdb_id')->unique();
+            $table->string('backdrop_path',100)->nullable();
+            $table->string('imdb_id',20)->unique();
+            $table->string('tmdb_id',20)->unique();
             $table->boolean('adult')->default(false);
+            $table->string('overview',2048)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

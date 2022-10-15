@@ -34,7 +34,8 @@ class StoreMovieRequest extends FormRequest
             'backdrop_path'=>'required|string|max:100',
             'imdb_id'=>'required|integer|unique:movies',
             'tmdb_id'=>'required|integer|unique:movies',
-            'adult'=>'required|boolean'
+            'adult'=>'required|boolean',
+            'overview'=>'string|max:2048',
         ];
     }
 }
