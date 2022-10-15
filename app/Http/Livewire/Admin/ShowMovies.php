@@ -27,7 +27,7 @@ class ShowMovies extends Component
             $this->cities = [];
         }
         if ($this->city!=null){
-            $rooms = Room::where('city_id', $this->city)->get();
+            $rooms = Room::where('city_id', $this->city)->with('seats')->get();
         }else{
             $rooms = [];
         }

@@ -20,7 +20,7 @@ class SeatSeeder extends Seeder
         $rooms = Room::get();
 
         foreach ($rooms as $room) {
-            $rows = ["A","B","C","D","F","G","H"];
+            $rows = ["A","B","C","D","F"];
             foreach ($rows as $row) {
                 for($i = 1; $i<10; $i++){
                     try{

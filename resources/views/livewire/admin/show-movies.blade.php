@@ -22,7 +22,7 @@
 
     <div class="bg-white overflow-hidden sm:rounded-lg">
         @foreach($movies as $i => $movie)
-            <div class="hover:bg-blue-50 flex flex-row justify-between">
+            <div class="hover:bg-slate-50 flex flex-row justify-between">
                 <div class="basis-1/4 flex justify-center">
                     <img src="https://image.tmdb.org/t/p/w500/{{$movie['poster_path']}}" alt="" width="200"
                          class="rounded-xl overflow-hidden m-4">
@@ -33,10 +33,11 @@
                         <p class="text-gray-500">{{$movie->tagline}}</p>
                         <p class="text-gray-500">Estreno: {{$movie->show_release_date()}}</p>
                         @if($movie->shows_today->isNotEmpty())
-                            <div class="bg-green-50 p-4 rounded-md">
+                            <div class="bg-slate-100 p-4 rounded-md">
                                 @foreach($movie->shows_today as $show)
                                     <span class="text-gray-500 font-bold">{{$show->day()}}: {{$show->start_and_end_time()}} </span>
                                     <span class="text-gray-500">Duración: {{$show->duration_in_minutos_and_seconds()}}</span><br/>
+                                    {{$show->room->seats->count()}} asientos disponibles<br/>
                                 @endforeach
                             </div>
                         @endif
