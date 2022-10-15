@@ -24,7 +24,8 @@ class StoreGenderRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|string:50'
+            'name'=>'required|string:50',
+            'id'=>'required|integer'
         ];
     }
 }

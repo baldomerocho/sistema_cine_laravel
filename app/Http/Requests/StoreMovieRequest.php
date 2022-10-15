@@ -37,6 +37,7 @@ class StoreMovieRequest extends FormRequest
             'adult'=>'required|boolean',
             'overview'=>'string|max:2048',
             'release_date'=>'datetime|nullable',
+            'runtime'=>'required|string',
         ];
     }
 }

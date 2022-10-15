@@ -27,8 +27,10 @@ class Movie extends Model
         'adult',
         'overview',
         'release_date',
+        'runtime',
     ];
 
+    // genders 'tmdb_id'
     public function genders()
     {
         return $this->belongsToMany(Gender::class);
@@ -38,4 +40,19 @@ class Movie extends Model
     {
         return $this->belongsToMany(Room::class);
     }
+
+    public function show_release_date()
+    {
+        return date('d-m-Y', strtotime($this->release_date));
+    }
+
+    // get shows today or future
+    public function shows_today()
+    {
+        return $this->hasMany(Show::class)->where('start', '>=', date('Y-m-d H:i:s'));
+    }
+
+    //return how mucho time left to show
+
+
 }

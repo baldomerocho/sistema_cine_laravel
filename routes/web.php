@@ -22,13 +22,13 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/add-movie', function () {
+        return view('add-movie');
+    })->name('add-movie');
 
-    Route::get('/cartelera', function () {
-        return view('cartelera');
-    })->name('cartelera');
+    Route::get('/horarios', function () {
+        return view('horarios');
+    })->name('horarios');
 });
 
 

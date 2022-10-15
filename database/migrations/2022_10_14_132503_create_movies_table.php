@@ -28,6 +28,7 @@ return new class extends Migration
             $table->boolean('adult')->default(false);
             $table->string('overview',2048)->nullable();
             $table->dateTime('release_date')->nullable();
+            $table->string('runtime',4);
             $table->softDeletes();
             $table->timestamps();
         });

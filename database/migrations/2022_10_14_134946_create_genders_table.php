@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('genders', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('id', false)->primary();
             $table->string('name');
             $table->softDeletes();
             $table->timestamps();

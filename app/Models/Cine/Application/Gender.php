@@ -12,8 +12,10 @@ class Gender extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'name'
+        'name',
+        'id'
     ];
+    public $incrementing = false;
     protected $hidden = [
         'created_at',
         'updated_at',

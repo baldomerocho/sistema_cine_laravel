@@ -48,7 +48,7 @@
                     title: title,
                     text: message,
                     icon: status,
-                    timer: 5000,
+                    timer: 1000,
                     buttons: false,
                 })
             });
