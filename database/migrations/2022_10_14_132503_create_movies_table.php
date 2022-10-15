@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('tmdb_id',20)->unique();
             $table->boolean('adult')->default(false);
             $table->string('overview',2048)->nullable();
+            $table->dateTime('release_date')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

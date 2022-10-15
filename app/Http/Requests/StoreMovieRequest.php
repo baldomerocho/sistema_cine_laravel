@@ -36,6 +36,7 @@ class StoreMovieRequest extends FormRequest
             'tmdb_id'=>'required|integer|unique:movies',
             'adult'=>'required|boolean',
             'overview'=>'string|max:2048',
+            'release_date'=>'datetime|nullable',
         ];
     }
 }

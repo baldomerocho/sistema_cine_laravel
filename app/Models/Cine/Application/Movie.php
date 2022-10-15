@@ -26,6 +26,7 @@ class Movie extends Model
         'tmdb_id',
         'adult',
         'overview',
+        'release_date',
     ];
 
     public function genders()

@@ -9,7 +9,7 @@ class ShowMovies extends Component
 {
     public function render()
     {
-        $movies = Movie::get();
+        $movies = Movie::orderBy('release_date', 'desc')->get();
         return view('livewire.admin.show-movies', compact('movies'));
     }
 }
