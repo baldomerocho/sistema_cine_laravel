@@ -26,4 +26,9 @@ class City extends Model
         return $this->belongsTo(Country::class);
     }
 
+    public function rooms()
+    {
+        return $this->hasMany(Room::class);
+    }
+
 }

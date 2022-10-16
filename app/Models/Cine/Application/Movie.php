@@ -49,10 +49,16 @@ class Movie extends Model
     // get shows today or future
     public function shows_today()
     {
-        return $this->hasMany(Show::class)->where('start', '>=', date('Y-m-d H:i:s'));
+        return $this->hasMany(Show::class)->where('start', '>=', date('Y-m-d H:i:s'))->orderBy('start', 'asc');
     }
 
     //return how mucho time left to show
+
+    // return url poster_path
+    public function poster_path_url()
+    {
+        return 'https://image.tmdb.org/t/p/w500' . $this->poster_path;
+    }
 
 
 }

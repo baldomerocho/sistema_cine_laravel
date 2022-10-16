@@ -35,6 +35,6 @@ class Room extends Model
 
     public function shows()
     {
-        return $this->hasMany(Show::class);
+        return $this->hasMany(Show::class)->where('start', '>=', date('Y-m-d H:i:s'))->orderBy('start', 'asc');
     }
 }

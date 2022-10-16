@@ -60,6 +60,15 @@ class Show extends Model
         return $this->belongsTo(Room::class);
     }
 
+    public function sales()
+    {
+        return $this->hasMany(Sale::class);
+    }
+
+    public function movie()
+    {
+        return $this->belongsTo(Movie::class);
+    }
 
 
 }

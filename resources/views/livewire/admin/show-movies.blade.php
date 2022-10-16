@@ -1,7 +1,7 @@
 <div>
     <div class="p-4 flex flex-row space-x-4">
         <select wire:model="country"
-                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-slate-500 focus:border-slate-500 sm:text-sm"
                 required>
             <option>-- Selecciona una opción --</option>
             @foreach($countries as $c)
@@ -10,7 +10,7 @@
         </select>
         @if($cities->isNotEmpty())
             <select wire:model="city"
-                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-slate-500 focus:border-slate-500 sm:text-sm">
                 <option value="null">-- Selecciona una opción --</option>
                 @foreach($cities as $cd)
                     <option value="{{$cd->id}}">{{$cd->name}}</option>
@@ -48,7 +48,7 @@
                     <div class="p-4">
                         <x-jet-label from="sala" value="Elige una Sala"/>
                         <select id="sala" wire:model="create_show.{{$i}}.room_id"
-                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-slate-500 focus:border-slate-500 sm:text-sm"
                                 required @if($rooms->isEmpty()) disabled @endif>
                             <option>-- Selecciona una opción --</option>
                             @foreach($rooms as $sala)
