@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Cine\Application\Sale;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -58,4 +59,9 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function sales()
+    {
+        return $this->hasMany(Sale::class);
+    }
 }

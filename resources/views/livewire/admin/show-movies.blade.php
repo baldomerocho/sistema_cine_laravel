@@ -1,7 +1,7 @@
 <div>
     <div class="p-4 flex flex-row space-x-4">
         <select wire:model="country"
-                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-slate-500 focus:border-slate-500 sm:text-sm"
                 required>
             <option>-- Selecciona una opción --</option>
             @foreach($countries as $c)
@@ -10,7 +10,7 @@
         </select>
         @if($cities->isNotEmpty())
             <select wire:model="city"
-                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-slate-500 focus:border-slate-500 sm:text-sm">
                 <option value="null">-- Selecciona una opción --</option>
                 @foreach($cities as $cd)
                     <option value="{{$cd->id}}">{{$cd->name}}</option>
@@ -22,7 +22,7 @@
 
     <div class="bg-white overflow-hidden sm:rounded-lg">
         @foreach($movies as $i => $movie)
-            <div class="hover:bg-blue-50 flex flex-row justify-between">
+            <div class="hover:bg-slate-50 flex flex-row justify-between">
                 <div class="basis-1/4 flex justify-center">
                     <img src="https://image.tmdb.org/t/p/w500/{{$movie['poster_path']}}" alt="" width="200"
                          class="rounded-xl overflow-hidden m-4">
@@ -33,10 +33,11 @@
                         <p class="text-gray-500">{{$movie->tagline}}</p>
                         <p class="text-gray-500">Estreno: {{$movie->show_release_date()}}</p>
                         @if($movie->shows_today->isNotEmpty())
-                            <div class="bg-green-50 p-4 rounded-md">
+                            <div class="bg-slate-100 p-4 rounded-md">
                                 @foreach($movie->shows_today as $show)
                                     <span class="text-gray-500 font-bold">{{$show->day()}}: {{$show->start_and_end_time()}} </span>
                                     <span class="text-gray-500">Duración: {{$show->duration_in_minutos_and_seconds()}}</span><br/>
+                                    {{$show->room->seats->count()}} asientos disponibles<br/>
                                 @endforeach
                             </div>
                         @endif
@@ -47,7 +48,7 @@
                     <div class="p-4">
                         <x-jet-label from="sala" value="Elige una Sala"/>
                         <select id="sala" wire:model="create_show.{{$i}}.room_id"
-                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-slate-500 focus:border-slate-500 sm:text-sm"
                                 required @if($rooms->isEmpty()) disabled @endif>
                             <option>-- Selecciona una opción --</option>
                             @foreach($rooms as $sala)

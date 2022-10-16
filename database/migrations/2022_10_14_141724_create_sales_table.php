@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->uuid('id')->primary();
 
+            $table->string('ticket',20)->nullable();
+
             $table->unsignedBigInteger('show_id');
             $table->foreign('show_id')->references('id')->on('shows')->cascadeOnUpdate()->cascadeOnDelete();
 

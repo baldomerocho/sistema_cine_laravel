@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Cine\Application\Sale;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,8 +30,22 @@ Route::middleware([
     Route::get('/horarios', function () {
         return view('horarios');
     })->name('horarios');
-});
 
+    Route::get('/entradas', function () {
+        return view('entradas');
+    })->name('entradas');
+
+
+});
+Route::get('/ticket/{$ticket}', function ($ticket) {
+    try{
+        $tt = Sale::where('ticket', $ticket)->with('show.movie','seats')->firstOrFail();
+        return view('livewire.modal-ticket',compact('tt'));
+    }catch (\Exception $e){
+        \Illuminate\Support\Facades\Log::error($e->getMessage());
+        return view('livewire.not-found');
+    }
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
