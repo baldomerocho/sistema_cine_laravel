@@ -8,7 +8,7 @@
                 <div class="text-xs">{{$ticket->created_at_ago()}}</div>
             </div>
             <div class="flex flex-col">
-                <button class="text-xs text-slate-500 mb-2" wire:click="detailsTicket({{$ticket->id}})">Detalles</button>
+                <a class="text-xs text-slate-500 mb-2" href="{{$ticket->sale_url()}}">Detalles</a>
             </div>
         </div>
     @endforeach

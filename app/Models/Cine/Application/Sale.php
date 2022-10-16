@@ -63,4 +63,8 @@ class Sale extends Model
         return $this->created_at->diffForHumans();
     }
 
+    public function sale_url()
+    {
+        return url('/ticket/'.$this->ticket);
+    }
 }
